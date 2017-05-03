@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 13</title>
+<link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Love+Ya+Like+A+Sister" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body ng-app="ourModule" ng-controller="ourController">
+    <h1>6-year-old simulator</h1>
+    <div class="container">
+
+    <div class="random">
+      <button type="button" ng-click="addWord()">Words</button>
+      <button type="button" ng-click="addWord2()">Words with Decoration</button>
+      <button type="button" ng-click="addPhrase()">More Words</button>
+      <button type="button" ng-click="addPhrase2()">More Words with Decoration</button>
+  </div>
+
+  <!-- Words -->
+  <div>
+    <p ng-class="item.cls" ng-repeat ="item in moreWords track by $index">{{item.text}}</p>
+
+  </div>
+
+<!-- Words with Decoration -->
+<div>
+  <p ng-class="line.cls" ng-repeat ="line in moreWords2 track by $index">{{line.text}}</p>
+
+</div>
+
+<!-- Phrases -->
+  <div>
+    <p ng-class="phrase.cls" ng-repeat="phrase in morePhrases track by $index">{{phrase.text}}</p>
+  </div>
+
+<!-- Phrases with Decoration -->
+<div>
+  <p ng-class="content.cls" ng-repeat="content in morePhrases2 track by $index">{{content.text}}</p>
+</div>
+
+    </div> <!--End Div-Container-->
+
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-route.min.js"></script>
+  <script src="app.js" charset="utf-8"></script>
+
+  </body>
+</html>
